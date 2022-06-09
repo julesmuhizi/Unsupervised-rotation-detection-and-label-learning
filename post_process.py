@@ -35,6 +35,8 @@ def post_process(model, output_dir):
 
     predictions = model.predict(np.ascontiguousarray(X))
     predictions = sc.inverse_transform(predictions)
+    # print(sc.inverse_transform(model.predict(X[0])))
+    # print(y[0])
 
     rotation_, scale_ = predictions[:, 0:2], predictions[:, 2:]
 
